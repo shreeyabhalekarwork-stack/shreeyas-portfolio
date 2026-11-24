@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import profilePhoto from './assets/profile.jpg'
 
 /* ------------------------------------------------------------------ */
 /*  Edit your details here                                             */
@@ -10,13 +11,11 @@ const PROFILE = {
   role: 'graphic designer',
   pronouns: 'she/her',
   tag: 'UI / UX',
-  // Drop a photo into src/assets (e.g. profile.jpg) and import it here:
-  // import photo from './assets/profile.jpg'  →  photo: photo
-  photo: null,
+  photo: profilePhoto,
   email: 'hello@example.com', // TODO: replace with your email
-  instagram: '#', // TODO
-  linkedin: '#', // TODO
-  behance: '#', // TODO
+  linkedin:
+    'https://www.linkedin.com/in/shreeya-bhalekar-507a85335?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+  behance: 'https://www.behance.net/shreeyabhalekar1',
 }
 
 const UIUX_PROJECTS = [
@@ -27,15 +26,15 @@ const UIUX_PROJECTS = [
     url: 'https://www.figma.com/design/RoP6mXb0JC76NHmd9iD3DI/BOOK-CLUB-APP?node-id=0-1&p=f&t=o53YoAhL7Lc395Ad-0',
   },
   {
-    title: 'Project Two',
-    kind: 'App design · UI/UX',
-    blurb: 'User flows, wireframes and high-fidelity screens built from research to prototype.',
+    title: 'UnboxStore',
+    kind: 'E-commerce · UI/UX',
+    blurb: 'A shopping experience designed around easy browsing, clear product pages and a smooth checkout.',
     url: 'https://www.figma.com/design/0XT4PpE2N58FtgQ3PHJDnS/Untitled?t=2GpvldlLiMZpJXCe-0',
   },
   {
-    title: 'Project Three',
-    kind: 'Interface design · UI/UX',
-    blurb: 'A clean, component-driven interface focused on clarity and easy navigation.',
+    title: 'Books Website',
+    kind: 'Website · UI design',
+    blurb: 'A website UI for book lovers — discovering titles, exploring genres and reading details at a glance.',
     url: 'https://www.figma.com/design/sPxbJ3Rz4GSxKuyv5eRppW/Untitled?node-id=0-1&p=f&t=2GpvldlLiMZpJXCe-0',
   },
   {
@@ -45,9 +44,9 @@ const UIUX_PROJECTS = [
     url: 'https://www.figma.com/design/XAG5YXmHEZ6VTTQUW3Hjss/UIUX-final-ty-sem2-project?node-id=0-1&p=f&t=tSi2dffemD2LeoMT-0',
   },
   {
-    title: 'Project Five',
-    kind: 'Product design · UI/UX',
-    blurb: 'Exploring layouts, type and colour to shape a friendly digital product experience.',
+    title: 'PMPL Bus',
+    kind: 'Transit app · UI/UX',
+    blurb: 'Redesigning the PMPL bus experience — finding routes, checking timings and planning trips with ease.',
     url: 'https://www.figma.com/design/YqbJslgTQjykS6IEwigqrx/Untitled?t=hOyjeHlaIuxUVxmg-0',
   },
 ]
@@ -413,9 +412,12 @@ function Footer() {
         {PROFILE.email}
       </a>
       <div className="socials">
-        <a href={PROFILE.instagram}>Instagram</a>
-        <a href={PROFILE.linkedin}>LinkedIn</a>
-        <a href={PROFILE.behance}>Behance</a>
+        <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">
+          LinkedIn
+        </a>
+        <a href={PROFILE.behance} target="_blank" rel="noreferrer">
+          Behance
+        </a>
       </div>
       <p className="copy">
         © {new Date().getFullYear()} {PROFILE.first} {PROFILE.last} · Designed with ♡

@@ -196,6 +196,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 45% 50%;
 }
 .photo-placeholder {
   width: 100%;
@@ -307,7 +308,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.6) hue-rotate(10deg);
+  object-position: 40% 45%;
 }
 .id-name {
   margin-top: 8px;
