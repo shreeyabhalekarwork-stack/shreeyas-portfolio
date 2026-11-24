@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import profilePhoto from './assets/profile.jpg'
+import heroPhoto from './assets/hero-profile.jpg'
+import unbox1 from './assets/projects/unboxstore/unboxstore-1.jpg'
+import unbox2 from './assets/projects/unboxstore/unboxstore-2.jpg'
 
 /* ------------------------------------------------------------------ */
 /*  Edit your details here                                             */
@@ -11,8 +14,9 @@ const PROFILE = {
   role: 'graphic designer',
   pronouns: 'she/her',
   tag: 'UI / UX',
-  photo: profilePhoto,
-  email: 'hello@example.com', // TODO: replace with your email
+  heroPhoto: heroPhoto, // big photo in the top section
+  photo: profilePhoto, // smaller photo on the "Introduction" card
+  email: 'shreeyabhalekar.work@gmail.com', // TODO: replace with your email
   linkedin:
     'https://www.linkedin.com/in/shreeya-bhalekar-507a85335?utm_source=share_via&utm_content=profile&utm_medium=member_android',
   behance: 'https://www.behance.net/shreeyabhalekar1',
@@ -28,8 +32,10 @@ const UIUX_PROJECTS = [
   {
     title: 'UnboxStore',
     kind: 'E-commerce · UI/UX',
-    blurb: 'A shopping experience designed around easy browsing, clear product pages and a smooth checkout.',
+    blurb:
+      'A streetwear brand — “Your style. Your statement.” Campaign posters plus a shopping experience built for easy browsing and a smooth checkout.',
     url: 'https://www.figma.com/design/0XT4PpE2N58FtgQ3PHJDnS/Untitled?t=2GpvldlLiMZpJXCe-0',
+    images: [unbox1, unbox2],
   },
   {
     title: 'Books Website',
@@ -163,8 +169,8 @@ function Hero() {
         <div className="hero-photo">
           <div className="photo-back" />
           <div className="photo-card">
-            {PROFILE.photo ? (
-              <img src={PROFILE.photo} alt={`${PROFILE.first} ${PROFILE.last}`} />
+            {PROFILE.heroPhoto ? (
+              <img src={PROFILE.heroPhoto} alt={`${PROFILE.first} ${PROFILE.last}`} />
             ) : (
               <div className="photo-placeholder">
                 <span>SB</span>
@@ -354,11 +360,19 @@ function Works() {
           {UIUX_PROJECTS.map((p, i) => (
             <a key={p.url} className="uiux-card" href={p.url} target="_blank" rel="noreferrer">
               <div className="uiux-art" data-variant={i % 5}>
-                <div className="mock-phone">
-                  <span />
-                  <span />
-                  <span />
-                </div>
+                {p.images ? (
+                  <div className="uiux-shots">
+                    {p.images.map((src, k) => (
+                      <img key={src} src={src} alt={`${p.title} design ${k + 1}`} loading="lazy" />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="mock-phone">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                )}
                 <span className="uiux-num">0{i + 1}</span>
               </div>
               <div className="uiux-body">

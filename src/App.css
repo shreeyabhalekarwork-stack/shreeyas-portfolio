@@ -196,7 +196,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 45% 50%;
+  object-position: 50% 42%;
 }
 .photo-placeholder {
   width: 100%;
@@ -602,7 +602,7 @@
 }
 .uiux-art {
   position: relative;
-  height: 180px;
+  height: 220px;
   display: grid;
   place-items: center;
   background: var(--blue-soft);
@@ -645,8 +645,40 @@
   height: 34px;
   background: var(--blue);
 }
+.uiux-shots {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.uiux-shots img {
+  position: absolute;
+  top: 26px;
+  width: 128px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 3px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.3);
+  transition: transform 0.35s;
+}
+.uiux-shots img:first-child {
+  left: calc(50% - 128px);
+  transform: rotate(-7deg);
+}
+.uiux-shots img:last-child {
+  left: calc(50% - 8px);
+  top: 40px;
+  transform: rotate(6deg);
+}
+.uiux-card:hover .uiux-shots img:first-child {
+  transform: rotate(-11deg) translate(-10px, -8px);
+}
+.uiux-card:hover .uiux-shots img:last-child {
+  transform: rotate(10deg) translate(10px, -8px);
+}
 .uiux-num {
   position: absolute;
+  z-index: 2;
   top: 12px;
   left: 16px;
   font-family: var(--f-heavy);
