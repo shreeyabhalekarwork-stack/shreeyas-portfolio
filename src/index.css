@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gilda+Display&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;500;600&display=swap');
+
+:root {
+  --ink: #1d1d22;
+  --muted: #55555f;
+  --paper: #ffffff;
+  --blue: #6f86e6;
+  --blue-deep: #5468ad;
+  --blue-soft: #e4e8fc;
+  --blue-mid: #c4cdf6;
+  --line: #d8dbe8;
+
+  --f-heavy: 'Anton', 'Impact', sans-serif;
+  --f-serif: 'Gilda Display', 'Times New Roman', serif;
+  --f-round: 'Space Grotesk', system-ui, sans-serif;
+  --f-body: 'Archivo', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
